@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="WeightGoals">
+        <item>Gain Weight</item>
+        <item>Lose Weight</item>
+        <item>Maintain Weight</item>
+        <item>Extreme Loss</item>
+        <item>Extreme Gain</item>
+    </string-array>
+    <string-array name="FitnessGoals">
+        <item>Build Muscle</item>
+        <item>Build Endurance</item>
+        <item>Aerobic Exercise</item>
+        <item>Beginner</item>
+        <item>Weight Training</item>
+    </string-array>
+    <string-array name="GymTime">
+        <item>1 Day Per Week</item>
+        <item>1-2 Days Per Week</item>
+        <item>3-4 Days Per Week</item>
+        <item>5-6 Days Per Week</item>
+        <item>7 Days Per Week</item>
+    </string-array>
+    <string-array name="MealOfDay">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Snack</item>
+    </string-array>
+</resources>
