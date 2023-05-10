@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android ="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#00205b"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,71 +7,164 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
-        android:layout_width="410dp"
-        android:layout_height="50dp"
-        android:background="#00205b"
+
+    <LinearLayout
+        android:id="@+id/layTimeOfMeal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:text="@string/time_of_meal"
+            android:textColor="#C69127"
+            android:textSize="10pt" />
+
+        <Spinner
+            android:id="@+id/spinnerTimeOfMeal"
+            android:layout_width="360dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:entries="@array/MealOfDay"
+            android:color="#C69127"
+            android:gravity="top" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listFood"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/foodEditor"
+        android:layout_below="@+id/layTimeOfMeal"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:foregroundTint="#C69214">
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/foodEditor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnTotalCalories"
+        android:layout_marginBottom="0dp"
+        android:orientation="vertical"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1"
-        app:tabIndicatorColor="#c69214"
-        app:tabSelectedTextColor="#c69214"
-        app:tabTextColor="#c69214">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fitness Goals"
-            tools:layout_editor_absoluteX="9dp"
-            tools:layout_editor_absoluteY="211dp" />
-
-        <com.google.android.material.tabs.TabItem
+        <TextView
+            android:id="@+id/foodLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Meal Plan"
-            tools:layout_editor_absoluteX="130dp"
-            tools:layout_editor_absoluteY="143dp" />
+            android:text="Food Editor"
+            android:textAlignment="center"
+            android:textColor="#C69127"
+            android:textSize="14pt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="395dp"
             android:layout_height="wrap_content"
-            android:background="#00205b"
-            android:text="Progress Logs"
-            tools:layout_editor_absoluteX="271dp"
-            tools:layout_editor_absoluteY="279dp" />
-    </com.google.android.material.tabs.TabLayout>
+            android:orientation="horizontal">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tabLayout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161" />
+            <ImageView
+                android:id="@+id/imgEditImage"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/almonds" />
 
-    <TextView
-        android:id="@+id/textView"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lblFoodName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Food Name:"
+                        android:textColor="#C69127"
+                        android:textSize="8pt" />
+
+                    <EditText
+                        android:id="@+id/txtEditFoodName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="#C69127" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lblEditCalories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calories:"
+                        android:textColor="#C69127"
+                        android:textSize="8pt" />
+
+                    <EditText
+                        android:id="@+id/txtEditFoodCalories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPersonName"
+                        android:textColor="#C69127" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Cancel" />
+
+            <Button
+                android:id="@+id/btnApply"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Apply" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnTotalCalories"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_marginBottom="8dp"
-        android:background="#00205b"
-        android:text="Nutra-Hall"
-        android:textAlignment="center"
-        android:textColor="#c69214"
-        android:textSize="18pt"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tabLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:text="Total Calories:" />
+
+    </RelativeLayout>

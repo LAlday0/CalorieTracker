@@ -8,39 +8,62 @@
     android:id="@+id/linearFoodLayout"
     android:focusable="true">
 
-        <ImageView
-            android:id="@+id/imgFoodPicture"
-            android:layout_width="150dp"
-            android:clickable="false"
-            android:layout_height="55dp"
-            android:layout_weight="1"
-            tools:srcCompat="@tools:sample/avatars" />
+    <ImageView
+        android:id="@+id/imgFoodPicture"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_weight="1"
+        android:clickable="false"
+        tools:srcCompat="@tools:sample/avatars" />
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="false"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtFoodName"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:clickable="false"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:text="Food 1"
+            android:textAlignment="center"
+            android:textColor="#C69127"
+            android:textSize="9pt" />
 
-            <TextView
-                android:id="@+id/txtFoodName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:text="Food 1"
-                android:textAlignment="center"
-                android:textSize="9pt" />
-
-            <TextView
-                android:id="@+id/txtCalories"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:text="Calories1"
-                android:textAlignment="center"
-                android:textSize="9pt" />
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/txtCalories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="Calories1"
+            android:textAlignment="center"
+            android:textColor="#C69127"
+            android:textSize="9pt" />
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imgAdd"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_weight="1"
+        android:foregroundGravity="right"
+        app:srcCompat="@drawable/baseline_add_24" />
+
+    <ImageView
+        android:id="@+id/imgEdit"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_weight="1"
+        app:srcCompat="@drawable/baseline_edit_24" />
+
+</LinearLayout>
